@@ -24,6 +24,7 @@ public class ExchangeRatesAPITests {
     public static void setup(){
         //for every single request this is a base URI
         baseURI = "http://api.openrates.io";
+
     }
 
     //get latest currency rates
@@ -57,7 +58,7 @@ public class ExchangeRatesAPITests {
         //let's verify that response contains today's date
         // this line returns today's date in the required format: yyyy-MM-dd
         String date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        response.then().assertThat().body("date", containsString("2020-05-19"));
+        response.then().assertThat().body("date", containsString(date));
 
         //is - same as equals
 

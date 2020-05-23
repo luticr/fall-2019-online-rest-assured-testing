@@ -63,8 +63,21 @@ public class ORDSTests {
 
         Assertions.assertEquals(200, statusCode);
 
+        //if assertions fails, you will get this kind of message:
+        /**
+         * java.lang.AssertionError: 1 expectation failed.
+         * Expected status code <201> but was <200>.
+         * 200 is always expected status code after GET requset
+         */
+
 
     }
+
+    /**
+     * given base URI = http://3.90.112.152:1000/ords/hr
+     * when user sends get request to "/countries"
+     * then user verifies that status code is 200
+     */
 
     /*
 when our test passes  we prove it from html reports ?
