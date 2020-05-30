@@ -67,7 +67,7 @@ public class ORDSTests {
         /**
          * java.lang.AssertionError: 1 expectation failed.
          * Expected status code <201> but was <200>.
-         * 200 is always expected status code after GET requset
+         * 200 is always expected status code after GET request
          */
 
 
