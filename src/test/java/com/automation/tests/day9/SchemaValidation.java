@@ -25,7 +25,7 @@ public class SchemaValidation {
 
         get("/spartans/{id}", 35).
                 prettyPeek().
-                then().
+          then().
                 body(JsonSchemaValidator.matchesJsonSchema(schema));
 
 
