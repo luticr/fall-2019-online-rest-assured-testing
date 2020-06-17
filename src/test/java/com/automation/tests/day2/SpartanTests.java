@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 
 public class SpartanTests {
 
-    String BASE_URL = "http://54.224.118.38:8000";
+    String BASE_URL = "http://54.152.21.73:8000";
 
     //URI (Uniform Resource Identifier) = URL + URN = http://www.google.com/index.html
     //URL (Uniform Resource Locator)    = http://www.google.com
@@ -20,7 +20,7 @@ public class SpartanTests {
     @Test
     @DisplayName("Get list of all spartans") //optional
     public void getAllSpartans() {
-        //401 - unauthorized, since we didn't provide credentials request failedx
+        //401 - unauthorized, since we didn't provide credentials request failed
         //how to provide credentials?
         //there different types of authentication: basic, oauth 1.0,  oauth 2.0, api key, bearer token, etc...
         //spartan app requires basic authentication: username and password
@@ -28,9 +28,9 @@ public class SpartanTests {
         given().
                 auth().basic("admin", "admin").
                 baseUri(BASE_URL).
-                when().
+         when().
                 get("/api/spartans").prettyPeek().
-                then().statusCode(200);
+         then().statusCode(200);
     }
 
     //add new spartan

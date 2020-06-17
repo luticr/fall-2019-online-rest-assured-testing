@@ -71,7 +71,7 @@ public class ExchangeRatesAPITests {
         Response response = given().
                 queryParam("base", "USD").
                 when().
-                get("2000-01-03").prettyPeek();
+                get("/2000-01-03").prettyPeek();
 
         Headers headers = response.getHeaders();
         System.out.println(headers);   //response header
@@ -89,7 +89,7 @@ public class ExchangeRatesAPITests {
         //rates - it's an object
         //all currencies are like instance variables
         //to get any instance variable(property), objectName.propertyName
-        Float param = response.jsonPath().get("rates.EUR");
+        float param = response.jsonPath().get("rates.EUR");
         //we use jsonPath() to parse JSON
         assertEquals(0.9910802775f, param);
 
